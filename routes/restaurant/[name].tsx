@@ -26,13 +26,15 @@ export default function RestaurantPage({ params, data }: PageProps<Props>) {
   const { restaurant } = data;
   const { name } = params;
   return (
-    <div class={tw`max-w-screen-lg mx-auto`}>
+    <div>
       <Header query={name} />
-      <ul class={tw``}>
-        {restaurant.products.map((product) => (
-          <Product query={name} product={product}></Product>
-        ))}
-      </ul>
+      <div class={tw`max-w-screen-lg mx-auto mt-32`}>
+        <ul class={tw``}>
+          {restaurant.products.map((product) => (
+            <Product query={name} product={product}></Product>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
